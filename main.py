@@ -100,7 +100,6 @@ class Panel1(wx.Panel):
 
         # Sizer
         sizer.AddGrowableCol(8, 0)
-        #sizer.AddGrowableRow(9, 0)
         self.SetSizer(sizer)
         sizer.Fit(self)
         self.new_vowels = []
@@ -142,7 +141,6 @@ class Panel1(wx.Panel):
         """Method to load any stored language in the SQL database"""
         language_name = self.input_language.GetValue()
         dt = query_table(language_name)
-        print(dt)
         line = dt[0]
         vowels = line[4][1:-2].replace("'", "").replace(", ", "")
         consonants = line[5][1:-2].replace("'", "").replace(", ", "")
